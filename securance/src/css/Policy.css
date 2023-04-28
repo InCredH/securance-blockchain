@@ -1,0 +1,127 @@
+.policy-head{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.ph-hlf1{
+    width: 50%;
+}
+
+.ph-hlf2{
+    width: 50%;
+    height: 300px;
+}
+
+.ph-hlf2 p{
+    margin: 40px;
+    margin-right: 100px;
+    margin-left: 0;
+    margin-top: 6%;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+}
+
+.pol-name{
+    width: 70%;
+    height: 70%;
+    border-radius: 20px;
+    margin-top: 5%;
+    margin-left :15%; 
+    border: 2px solid #521313;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    display: flex;
+    flex-direction: row;
+}
+
+.pol-name-img{
+    width: 30%
+}
+.pol-name-im img{
+    width: 30px;
+}
+.pol-name-pol h1{
+    margin-top: 40px;
+    font-weight: 400;
+}
+.pol-name-pol{
+    width: 70%;
+}
+
+/* Body */
+
+.box{
+    margin-top: 50px;
+    width: 100%;
+    height: 60px;
+    background-color: #D9BBBB;
+}
+
+.pol-body{
+    display: flex;
+    flex-direction: row;
+}
+.pol-terms1{
+    width: 50%;
+    background-color: #FEF2EB;
+    padding-left: 40px;
+    padding-top: 30px;
+    padding-right: 40px;
+}
+.pol-terms2{
+    width: 50%;
+    background-color: #FBDCDC;
+}
+
+.pol-input input{
+    padding-top: 20px;
+    border: none;
+    border-bottom: 2px solid #da0000;
+    font-size: 20px;
+    background-color: #FEF2EB;
+}
+.pol-input button{
+    font-size: 1.2rem;
+    margin-left: 30px;
+    margin-bottom: 50px;
+    background-color: #4F0075;
+}
+
+.pol-input p{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.pol-input label{
+    display: block;
+    font-size: 40px;
+    margin-right: 30px;
+    /* visibility: hidden; */
+}
+
+.hid{
+    visibility: hidden;
+}
+
+/* last part */
+
+.buy-pol{
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    background-color: #D9BBBB;
+}
+.buy-pol button{
+    margin-top: 11px;
+    color: #FF7171;
+    background-color: white;
+}
+
+.buy-pol button:hover{
+    color: #f94b4b;
+}
+
+.pol-text a{
+    text-decoration: none;
+    color: rgb(255, 60, 93);
+}

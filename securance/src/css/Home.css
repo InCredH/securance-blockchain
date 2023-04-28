@@ -1,0 +1,37 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    /* position: fixed; */
+    background: rgb(205, 0, 0);
+    color: white;
+    font-family: Helvetica;
+    font-weight: 300;
+}
+
+.navbar__title {
+    margin-right: auto;
+    font-size: 150%;
+    padding: 12px 16px;
+}
+
+.navbar__item {
+    padding: 16px 16px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.navbar__item a{
+    text-decoration: none;
+    color: white;
+}
+
+.connect-button {
+    background-color: #4F0075;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    margin-right: 10px;
+}
+.connect-button:hover {
+    background-color: purple;
+    color: white;
+}
