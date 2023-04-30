@@ -65,3 +65,77 @@ padding: 20px;
 font-size: 30px;
 margin-bottom: 50px;
 }
+
+
+/* Admin page : */
+
+.cyber-adh1{
+  font-weight: 400;
+}
+
+.cyber-ad{
+
+}
+
+.comp-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.left-comp-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.middle-comp-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.right-comp-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.middle-comp-box h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.right-comp-box button {
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.right-comp-box button:hover {
+  background-color: #3e8e41;
+}
+
+a {
+  color: #4CAF50;
+}
+
+.reject{
+  background-color: red;
+}
+
+.reject button:hover {
+  background-color: #bd4e4e;
+}

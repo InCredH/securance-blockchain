@@ -1,7 +1,7 @@
 import abi from '../contract/newCyberInsurance.json';
 import {ethers} from "ethers";
 import { Web3Provider } from "@ethersproject/providers";
-
+// const { CONTRACT_ADDRESS } = require('./deploy.js');
 import React from "react";
 import Main from "./Main";
 import Dashboard from "./Dasboard"
@@ -17,6 +17,8 @@ import AbtPol from "./Abt_pol";
 import FormDataContext from './ContextData';
 import { useState, useEffect } from 'react';
 import CyberHome from "./CyberHome";
+import SecAdmin from './SecAdmin';
+import CyberAdmin from './CyberAdmin';
 
 function App() {
   const [contractState, setcontractState] = useState({
@@ -24,7 +26,6 @@ function App() {
     signer: null,
     contract: null
   })
-
   const [formData, setFormData] = useState({
     fName: "Ayush",
   });
@@ -36,7 +37,7 @@ function App() {
 
   useEffect(() => {
     const ConnectWallet = async () => {
-      const contractAddress = "0x19bc5160b40d64d9835b1ca2ce51f68143272edb";
+      const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
       const contractABI = abi.abi;
       try {
         const { ethereum } = window;
@@ -46,6 +47,9 @@ function App() {
           });
 
           const provider = new Web3Provider(ethereum);
+          const balance = await provider.getBalance(contractAddress);
+          console.log(`Balance of ${contractAddress}: ${balance/1e9}.toString() ether`);
+          
           const signer = provider.getSigner();
           const contract = new ethers.Contract(
             contractAddress,
@@ -72,9 +76,11 @@ function App() {
           <Route exact path="/" element={<Main />}></Route>
           <Route exact path="/policy" element={<Policy />}></Route>
           <Route exact path="/login" element={<Login />}></Route>
-          <Route exact path="/dashboard" element={<Dashboard />}></Route>
+          <Route exact path="/dashboard" element={<Dashboard contractState={contractState}/>}></Route>
           <Route exact path="/abtpol" element={<AbtPol />}></Route>
-          <Route exact path="/cyber" element={<CyberHome />}></Route>
+          <Route exact path="/cyber" element={<CyberHome contractState={contractState}/>}></Route>
+          <Route exact path = "/secadmin" element = {<SecAdmin />} />
+          <Route exact path = "/Cyberadmin" element = {<CyberAdmin />} />
           <Route exact path="/buypol" element={<BuyPol contractState={contractState}/>}></Route>
         </Routes>
       </FormDataContext.Provider>

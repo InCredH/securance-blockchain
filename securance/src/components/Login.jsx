@@ -1,3 +1,7 @@
+import abi from '../contract/newCyberInsurance.json';
+import {ethers} from "ethers";
+import { Web3Provider } from "@ethersproject/providers";
+
 import React, { useState, useEffect, useContext } from "react";
 import "../css/Login.css";
 import FormDataContext from "./ContextData";
@@ -9,6 +13,11 @@ function Login() {
   const [account, setAccount] = useState("");
   const [isConnected, setIsConnected] = useState(false);
   const { setFormData } = useContext(FormDataContext);
+  const [contractState, setcontractState] = useState({
+    provider: null,
+    signer: null,
+    contract: null
+  })
 
   useEffect(() => {
     const formDataString = localStorage.getItem("formData");
@@ -42,6 +51,7 @@ function Login() {
   };
 
   async function connectToMetaMask() {
+    
     if (typeof window.ethereum === "undefined") {
       alert("Please install MetaMask to use this dApp!");
       return;

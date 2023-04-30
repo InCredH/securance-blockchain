@@ -1,0 +1,14 @@
+.sec-admin h1{
+    font-weight: 400;
+}
+
+.sec-admin{
+    margin-top: 100px;
+}
+
+.adm-blk{
+    height: 150px;
+    width: 350px;
+    background-color: red;
+}
+

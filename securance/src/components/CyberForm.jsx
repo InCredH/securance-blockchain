@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import {ethers} from "ethers";
 
-function ClaimForm() {
+function ClaimForm({contractState}) {
   const navigate = useNavigate();
     useEffect(() => {
         const user = localStorage.getItem("formData");
@@ -22,15 +23,34 @@ function ClaimForm() {
       desc: desc.value,
       doc: doc.value,
       add: add.value,
-      claim: claim.value,
+      claim: claim.value*1,
     };
     setComplaint(data);
     console.log(complaint);
     
   };
+
+  async function applyForClaim (){
+      const { contract } = contractState;
+      
+        console.log(complaint.claim);
+        var claimAmount = (complaint.claim*0.0000064).toFixed(5);
+        var claimAmont_in_wei = ethers.utils.parseEther(claimAmount.toString());
+
+        try{
+          const transaction = await contract.applyForClaim(claimAmont_in_wei);
+          await transaction.wait();
+          console.log("Transaction is done");
+        }
+        catch(e){
+            console.log(e);
+            console.log("Transaction failed")
+        }    
+  }
   
   useEffect(() =>{
     console.log(complaint);
+    applyForClaim();
   },[complaint]);
 
   return (

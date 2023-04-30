@@ -28,7 +28,7 @@ function NavBar(){
         localStorage.removeItem('formData');
         setIsConnected(false);
         setFormData({});
-        window.location.reload();
+        // window.location.reload();
         navigate("/Login");
     }
 

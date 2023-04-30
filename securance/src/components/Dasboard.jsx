@@ -7,9 +7,12 @@ import { useEffect } from "react";
 import Table from "./Table";
 import Home from "./Home";
 import Footer from "./Footer";
-function Dashboard() {
+function Dashboard({contractState}) {
     const {formData} = useContext(FormDataContext);
     const [data, setData] = useState({});
+
+    
+
     useEffect(() => {
         const formDataString = localStorage.getItem('formData');
         if (formDataString) {
@@ -18,7 +21,7 @@ function Dashboard() {
             setData(data);
         }
     }, []);
-
+    
   return (
     <>
       <Home />
@@ -60,7 +63,7 @@ function Dashboard() {
         <div className="claim-btn">
           <button><Link to ="/Cyber">Claim</Link></button>
         </div>
-        <Table />
+        <Table contractState={contractState}/>
       </div>
     </div>
     <Footer />

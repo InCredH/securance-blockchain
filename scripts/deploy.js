@@ -8,14 +8,15 @@ const hre = require("hardhat");
 
 async function main() {
   // await hre.run('compile');
-  const [owner,cyberCrimePerson] = ['0x84EC7f7B97B2992fbEd211AAe97e51E0aC340b06','0x1148c3F0318E738F19d49B3235A5a364de7e226A']
+  const [owner,cyberCrimePerson] = ['0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266','0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199']
   // const [owner, cyberCrimePerson, from2, from3] = await hre.ethers.getSigners();
   // console.log(owner);
   const newCyberInsurance = await hre.ethers.getContractFactory("newCyberInsurance");
   // console.log(cyberCrimePerson.address);
-  const contract = await newCyberInsurance.deploy(cyberCrimePerson);
-
+  const contract = await newCyberInsurance.deploy(owner, cyberCrimePerson);
+  
   await contract.deployed();
+  console.log(`Contract deployed by address: ${contract.deployTransaction.from}`);
 
   console.log("Address of contract:", contract.address);
 }

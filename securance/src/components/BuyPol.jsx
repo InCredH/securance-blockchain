@@ -9,22 +9,44 @@ function BuyPol({contractState}){
     const [fullData, setFullData] = useState({});
     
     const buyPolicy = async () => {
-        // event.preventDefault();
         const {contract} = contractState;
-        var claimAmountWanted = (fullData.claim* 0.0000064).toFixed(5);
-        claimAmountWanted*=1e9;
+        var claimAmountWanted = (fullData.claim*0.0000064).toFixed(5);
         
-        var premium = (fullData.premium * 0.0000064).toFixed(5);
-        var passingPremium = premium*1e9;
+        var premium = (fullData.premium*0.0000064).toFixed(5);
         
-        console.log(claimAmountWanted,premium);
-
-        const value = {value:ethers.utils.parseEther(passingPremium.toString())};
+        const premium_in_wei = ethers.utils.parseEther(premium.toString());
+        const claim_in_wei = ethers.utils.parseEther(claimAmountWanted.toString());
+        const value = {value: ethers.utils.parseEther(premium.toString())};
         
-        const transaction = await contract.buyPolicy(claimAmountWanted,premium,value);
-        await transaction.wait();
-        console.log("Transaction is done")
+        console.log(premium_in_wei,claim_in_wei);
+        try{
+            const transaction = await contract.buyPolicy(claim_in_wei,premium_in_wei,value);
+            await transaction.wait();
+        }
+        catch(e){
+            console.log(e);
+        }
+        console.log("Transaction is done");
     }
+
+    // if (typeof BigInt === 'undefined') {
+    //     // Polyfill for BigInt
+    //     require('bigint-polyfill');
+    //   }
+
+    // const buyPolicy = async () => {
+    //     const {contract} = contractState;
+    //     var claimAmountWanted = BigInt((fullData.claim * 0.0000064 * 1e9).toString());
+    //     var premium = BigInt((fullData.premium * 0.0000064 * 1e9).toString());
+    
+    //     console.log(claimAmountWanted.toString(), premium.toString());
+    
+    //     const value = {value: ethers.utils.parseEther(premium.toString())};
+            
+    //     const transaction = await contract.buyPolicy(claimAmountWanted, premium, value);
+    //     await transaction.wait();
+    //     console.log("Transaction is done");
+    // }
     
     const navigate = useNavigate();
     useEffect(() => {
@@ -64,8 +86,9 @@ function BuyPol({contractState}){
         <>
             <Home/>
             <div className="buypol">
+
                 <div className="buypol-blk">
-                    {/* bank account details, aadhar card number, address*/}
+                    <h1>Buy Policy </h1>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="address">Home Address:</label>
                         <input type="text" id="address" name="address" required />
