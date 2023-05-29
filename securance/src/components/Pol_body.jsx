@@ -35,7 +35,7 @@ function Pol_body(){
                     </div>
                     <div className="pol-input">
                         <label htmlFor="claim-amount-input">Claim Amount: </label>
-                        <p>Calculate the monthly Premium to be paid : </p>
+                        <p>Calculate the yearly Premium to be paid : </p>
                         <input 
                         id="claim-amount-input" 
                         name="claim-amount" 
@@ -47,7 +47,12 @@ function Pol_body(){
                     </div>
                 </div>
                 <div className="pol-terms2">
-                    
+                <div className="pol-text">
+                        <h1>License</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                        <p><a href="/abtpol"><u>learn more..</u></a></p>
+                    </div>
                 </div>
             </div>
             <div className="buy-pol">

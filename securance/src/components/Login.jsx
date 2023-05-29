@@ -81,8 +81,7 @@ function Login() {
       <Home />
     
     <div className="login-pg">
-      <h1 className="fh1">Signup / </h1>
-      <h1>Login</h1>
+      <h1 className="h1">Signup / Login</h1>
       <div className="login-blk">
         <form className="log-box" onSubmit={handleSubmit}>
           <label htmlFor="first-name">First Name : </label>
@@ -116,7 +115,7 @@ function Login() {
             <button id="connect-button"
             className="connect-button"
             onClick={connectToMetaMask}
-            type="submit">submit</button>
+            type="submit-log">submit</button>
           </div>
         </form>
       </div>

@@ -1,7 +1,6 @@
 .slider-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin: 20px;
   }
   
@@ -41,9 +40,9 @@
   }
   
   .buypol-blk{
-    width: 600px;
-    height: 400px;
+    width: 500px;
+    height: 300px;
     /* background-color: #65af4c; */
-    margin-top: 200px;
+    margin-top: 70px;
     margin-left: 35%;
   }

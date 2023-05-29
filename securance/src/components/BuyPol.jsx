@@ -88,8 +88,9 @@ function BuyPol({contractState}){
             <div className="buypol">
 
                 <div className="buypol-blk">
-                    <h1>Buy Policy </h1>
-                    <form onSubmit={handleSubmit}>
+                    <h1 className="buyh1">Buy Policy </h1>
+                    <div className="form-div">
+                    <form onSubmit={handleSubmit} >
                         <label htmlFor="address">Home Address:</label>
                         <input type="text" id="address" name="address" required />
 
@@ -99,8 +100,9 @@ function BuyPol({contractState}){
                         <label htmlFor="bank">Bank Account Details:</label>
                         <input type="text" id="bank" name="bank" required></input>
                         <Slider onSliderChange={handleSliderChange} />
-                        <button type="submit">Submit</button>
+                        <button type="submit-pol">Submit</button>
                     </form>
+                    </div>
                     
                 </div>
             </div>

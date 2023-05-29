@@ -1,17 +1,17 @@
 .log-box{
-    width: 50%;
+    width: 40%;
     /* background-color: red; */
-    border-radius: 20px;
+    border-radius: 10px;
     border: 2px solid red;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 30px;
+    padding-bottom: 20px;
     padding-left: 30px;
 }
 
 .log-box label{
-    font-size: 2rem;
-    line-height: 2.5rem;
-    margin-bottom: 40px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-bottom: 30px;
 }
 
 .login-blk{
@@ -23,14 +23,14 @@
     /* margin-top: 200px; */
 }
 .login-pg{
-    padding-bottom: 400px;
+    padding-bottom: 70px;
 }
 
 .login-pg h1{
-    display: inline-block;
-    margin-bottom: 100px;
-    margin-top: 100px;
-    font-size: 3rem;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-size: 2rem;
+    justify-content: center;
     color: red;
 }
 .fh1{
@@ -38,15 +38,14 @@
 }
 
 .log-box input{
-    font-size: 1.5rem;
-    margin-bottom: 40px;
+    font-size: 1rem;
+    margin-bottom: 30px;
     border: none;
+    width: 30rem;
     border-bottom: 2px solid orange;
 }
 
 .log-sub{
-    display: block;
-    margin-top: 30px;
-    align-items: center;
-    text-align: center;
+    margin-top: 20px;
+    margin-left: 1px;
 }
